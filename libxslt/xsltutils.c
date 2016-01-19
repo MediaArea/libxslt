@@ -45,8 +45,6 @@
 /* gettimeofday on Windows ??? */
 #if defined(WIN32) && !defined(__CYGWIN__)
 #ifdef _MSC_VER
-#include <winsock2.h>
-#pragma comment(lib, "ws2_32.lib")
 #define gettimeofday(p1,p2)
 #define HAVE_GETTIMEOFDAY
 #define XSLT_WIN32_PERFORMANCE_COUNTER

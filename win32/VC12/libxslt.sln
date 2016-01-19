@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libxslt_so", "libxslt\libxslt_so.vcxproj", "{F8C03828-5050-4E68-A7B4-41131F9049D7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xsltproc", "xsltproc\xsltproc.vcxproj", "{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8C03828-5050-4E68-A7B4-41131F9049D7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F8C03828-5050-4E68-A7B4-41131F9049D7}.Debug|Win32.Build.0 = Debug|Win32
+		{F8C03828-5050-4E68-A7B4-41131F9049D7}.Release|Win32.ActiveCfg = Release|Win32
+		{F8C03828-5050-4E68-A7B4-41131F9049D7}.Release|Win32.Build.0 = Release|Win32
+		{F8C03828-5050-4E68-A7B4-41131F9049D7}.Template|Win32.ActiveCfg = Release|Win32
+		{F8C03828-5050-4E68-A7B4-41131F9049D7}.Template|Win32.Build.0 = Release|Win32
+		{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}.Debug|Win32.Build.0 = Debug|Win32
+		{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}.Release|Win32.ActiveCfg = Release|Win32
+		{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}.Release|Win32.Build.0 = Release|Win32
+		{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}.Template|Win32.ActiveCfg = Template|Win32
+		{35E47FB2-FD18-48A1-A6CD-B30E449A83E6}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
