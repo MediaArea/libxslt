@@ -137,6 +137,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\libxslt\attributes.c" />
+    <ClCompile Include="..\..\..\libxslt\attrvt.c" />
     <ClCompile Include="..\..\..\libxslt\documents.c" />
     <ClCompile Include="..\..\..\libxslt\extensions.c" />
     <ClCompile Include="..\..\..\libxslt\extra.c" />
@@ -147,10 +148,12 @@
     <ClCompile Include="..\..\..\libxslt\numbers.c" />
     <ClCompile Include="..\..\..\libxslt\pattern.c" />
     <ClCompile Include="..\..\..\libxslt\preproc.c" />
+    <ClCompile Include="..\..\..\libxslt\security.c" />
     <ClCompile Include="..\..\..\libxslt\templates.c" />
     <ClCompile Include="..\..\..\libxslt\transform.c" />
     <ClCompile Include="..\..\..\libxslt\variables.c" />
     <ClCompile Include="..\..\..\libxslt\xslt.c" />
+    <ClCompile Include="..\..\..\libxslt\xsltlocale.c" />
     <ClCompile Include="..\..\..\libxslt\xsltutils.c" />
   </ItemGroup>
   <ItemGroup>
@@ -169,12 +172,14 @@
     <ClInclude Include="..\..\..\libxslt\numbersInternals.h" />
     <ClInclude Include="..\..\..\libxslt\pattern.h" />
     <ClInclude Include="..\..\..\libxslt\preproc.h" />
+    <ClInclude Include="..\..\..\libxslt\security.h" />
     <ClInclude Include="..\..\..\libxslt\templates.h" />
     <ClInclude Include="..\..\..\libxslt\transform.h" />
     <ClInclude Include="..\..\..\libxslt\variables.h" />
     <ClInclude Include="..\..\..\libxslt\xslt.h" />
     <ClInclude Include="..\..\..\libxslt\xsltconfig.h" />
     <ClInclude Include="..\..\..\libxslt\xsltInternals.h" />
+    <ClInclude Include="..\..\..\libxslt\xsltlocale.h" />
     <ClInclude Include="..\..\..\libxslt\xsltutils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
