@@ -98,6 +98,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\..\..;..\..\..\libxslt;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_STATIC;LIBEXSLT_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -145,6 +146,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..;..\..\..\libxslt;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_STATIC;LIBEXSLT_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
