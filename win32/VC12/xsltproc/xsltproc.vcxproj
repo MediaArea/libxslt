@@ -138,6 +138,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\..\..;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_STATIC;LIBEXSLT_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Debug\xsltproc.tlb</TypeLibraryName>
@@ -158,8 +159,7 @@
     <ClCompile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\..\..;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>
-      </PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_STATIC;LIBEXSLT_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Midl>
@@ -181,12 +181,11 @@
     <ClCompile Include="..\..\..\xsltproc\xsltproc.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libexslt\libexslt_so.vcxproj">
+    <ProjectReference Include="..\libexslt\libexslt.vcxproj">
       <Project>{c66b92e2-e917-4556-84d9-6d32c10c3185}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\libxslt\libxslt_so.vcxproj">
+    <ProjectReference Include="..\libxslt\libxslt.vcxproj">
       <Project>{f8c03828-5050-4e68-a7b4-41131f9049d7}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

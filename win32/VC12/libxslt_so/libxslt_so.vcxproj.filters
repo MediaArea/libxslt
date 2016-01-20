@@ -140,7 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="libxslt.def">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

@@ -19,15 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <SccProjectName />
-    <SccLocalPath />
-    <ProjectGuid>{C66B92E2-E917-4556-84D9-6D32C10C3185}</ProjectGuid>
+    <ProjectGuid>{4B37A72E-1B96-4B37-B3AB-9A03E750AE0C}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -44,172 +41,165 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <TargetName>libexslt</TargetName>
+    <TargetName>libxslt</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>libexslt</TargetName>
+    <TargetName>libxslt</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\Intermediate\</IntDir>
-    <TargetName>libexslt</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>libxslt</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>libexslt</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>libxslt</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..;..\..\..\libxslt;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ObjectFileName>.\Debug\</ObjectFileName>
+      <AdditionalIncludeDirectories>..\..\..\libxslt;..\..\..;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_SO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
-    <Midl>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Debug\libxslt_so.tlb</TypeLibraryName>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
-      <TargetEnvironment>Win32</TargetEnvironment>
-    </Midl>
     <ResourceCompile>
-      <Culture>0x0409</Culture>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug\libxslt_so.bsc</OutputFile>
-    </Bscmake>
     <Link>
       <LinkDLL>true</LinkDLL>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <ImportLibrary>.\Debug\libexslt.lib</ImportLibrary>
-      <ModuleDefinitionFile>.\libexslt.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\libxslt.def</ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist ..\..\..\config.h cd ..\.. &amp;&amp; cscript configure.js</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\libxslt;..\..\..;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>..\..\..;..\..\..\libxslt;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_SO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Midl>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Debug\libxslt_so.tlb</TypeLibraryName>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
-    </Midl>
     <ResourceCompile>
-      <Culture>0x0409</Culture>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug\libxslt_so.bsc</OutputFile>
-    </Bscmake>
     <Link>
       <LinkDLL>true</LinkDLL>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <ImportLibrary>.\Debug\libexslt.lib</ImportLibrary>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist ..\..\..\config.h cd ..\.. &amp;&amp; cscript configure.js</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..;..\..\..\libxslt;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeaderOutputFile>.\Release\libexslt_so.pch</PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>..\..\..\libxslt;..\..\..;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_SO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Release\libexslt_so.tlb</TypeLibraryName>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
     <ResourceCompile>
-      <Culture>0x0409</Culture>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\libexslt_so.bsc</OutputFile>
-    </Bscmake>
     <Link>
       <LinkDLL>true</LinkDLL>
-      <SubSystem>Console</SubSystem>
-      <ImportLibrary>.\Release\libexslt.lib</ImportLibrary>
-      <ModuleDefinitionFile>.\libexslt.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\libxslt.def</ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist ..\..\..\config.h cd ..\.. &amp;&amp; cscript configure.js</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..;..\..\..\libxslt;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\libxslt;..\..\..;..\..\..\..\libxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBXML_STATIC;LIBXSLT_SO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Release\libexslt_so.tlb</TypeLibraryName>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
     </Midl>
     <ResourceCompile>
-      <Culture>0x0409</Culture>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\libexslt_so.bsc</OutputFile>
-    </Bscmake>
     <Link>
       <LinkDLL>true</LinkDLL>
-      <SubSystem>Console</SubSystem>
-      <ImportLibrary>.\Release\libexslt.lib</ImportLibrary>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist ..\..\..\config.h cd ..\.. &amp;&amp; cscript configure.js</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\libexslt\common.c" />
-    <ClCompile Include="..\..\..\libexslt\crypto.c" />
-    <ClCompile Include="..\..\..\libexslt\date.c" />
-    <ClCompile Include="..\..\..\libexslt\dynamic.c" />
-    <ClCompile Include="..\..\..\libexslt\exslt.c" />
-    <ClCompile Include="..\..\..\libexslt\functions.c" />
-    <ClCompile Include="..\..\..\libexslt\math.c" />
-    <ClCompile Include="..\..\..\libexslt\saxon.c" />
-    <ClCompile Include="..\..\..\libexslt\sets.c" />
-    <ClCompile Include="..\..\..\libexslt\strings.c" />
+    <ClCompile Include="..\..\..\libxslt\attributes.c" />
+    <ClCompile Include="..\..\..\libxslt\attrvt.c" />
+    <ClCompile Include="..\..\..\libxslt\documents.c" />
+    <ClCompile Include="..\..\..\libxslt\extensions.c" />
+    <ClCompile Include="..\..\..\libxslt\extra.c" />
+    <ClCompile Include="..\..\..\libxslt\functions.c" />
+    <ClCompile Include="..\..\..\libxslt\imports.c" />
+    <ClCompile Include="..\..\..\libxslt\keys.c" />
+    <ClCompile Include="..\..\..\libxslt\namespaces.c" />
+    <ClCompile Include="..\..\..\libxslt\numbers.c" />
+    <ClCompile Include="..\..\..\libxslt\pattern.c" />
+    <ClCompile Include="..\..\..\libxslt\preproc.c" />
+    <ClCompile Include="..\..\..\libxslt\security.c" />
+    <ClCompile Include="..\..\..\libxslt\templates.c" />
+    <ClCompile Include="..\..\..\libxslt\transform.c" />
+    <ClCompile Include="..\..\..\libxslt\variables.c" />
+    <ClCompile Include="..\..\..\libxslt\xslt.c" />
+    <ClCompile Include="..\..\..\libxslt\xsltlocale.c" />
+    <ClCompile Include="..\..\..\libxslt\xsltutils.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\libexslt\exslt.h" />
-    <ClInclude Include="..\..\..\libexslt\exsltconfig.h" />
-    <ClInclude Include="..\..\..\libexslt\exsltexports.h" />
-    <ClInclude Include="..\..\..\libexslt\libexslt.h" />
+    <CustomBuild Include="libxslt.def" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libxslt\libxslt_so.vcxproj">
-      <Project>{f8c03828-5050-4e68-a7b4-41131f9049d7}</Project>
+    <ClInclude Include="..\..\..\config.h" />
+    <ClInclude Include="..\..\..\libxslt\attributes.h" />
+    <ClInclude Include="..\..\..\libxslt\documents.h" />
+    <ClInclude Include="..\..\..\libxslt\extensions.h" />
+    <ClInclude Include="..\..\..\libxslt\extra.h" />
+    <ClInclude Include="..\..\..\libxslt\functions.h" />
+    <ClInclude Include="..\..\..\libxslt\imports.h" />
+    <ClInclude Include="..\..\..\libxslt\keys.h" />
+    <ClInclude Include="..\..\..\libxslt\namespaces.h" />
+    <ClInclude Include="..\..\..\libxslt\numbersInternals.h" />
+    <ClInclude Include="..\..\..\libxslt\pattern.h" />
+    <ClInclude Include="..\..\..\libxslt\preproc.h" />
+    <ClInclude Include="..\..\..\libxslt\security.h" />
+    <ClInclude Include="..\..\..\libxslt\templates.h" />
+    <ClInclude Include="..\..\..\libxslt\transform.h" />
+    <ClInclude Include="..\..\..\libxslt\variables.h" />
+    <ClInclude Include="..\..\..\libxslt\xslt.h" />
+    <ClInclude Include="..\..\..\libxslt\xsltconfig.h" />
+    <ClInclude Include="..\..\..\libxslt\xsltInternals.h" />
+    <ClInclude Include="..\..\..\libxslt\xsltlocale.h" />
+    <ClInclude Include="..\..\..\libxslt\xsltutils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\libxml2\win32\VC12\libxml2.vcxproj">
+      <Project>{1d6039f6-5078-416f-a3af-a36efc7e6a1c}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="libexslt.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
