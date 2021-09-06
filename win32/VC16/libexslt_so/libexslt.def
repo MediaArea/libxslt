@@ -1,0 +1,28 @@
+
+LIBRARY libexslt
+EXPORTS
+
+	exsltLibexsltVersion
+	exsltLibraryVersion
+	exsltLibxmlVersion
+	exsltLibxsltVersion
+
+	exsltCommonRegister
+	exsltCryptoRegister
+	exsltDateRegister
+	exsltDateXpathCtxtRegister
+	exsltDynRegister
+	exsltFuncRegister
+	exsltMathRegister
+	exsltMathXpathCtxtRegister
+	exsltRegisterAll
+	exsltSaxonRegister
+	exsltSetsRegister
+	exsltSetsXpathCtxtRegister
+	exsltStrRegister
+	exsltStrXpathCtxtRegister
+
+	
+
+
+	
